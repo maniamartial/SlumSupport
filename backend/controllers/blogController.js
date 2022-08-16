@@ -27,6 +27,7 @@ const getPosts = asyncHandler(async (req, res) => {
 const createPost = asyncHandler(async (req, res) => {
   const { category, title, meta_description, keywords, content, tags } =
     req.body;
+  console.log(category);
 
   try {
     const post = await Blog.create({
@@ -39,7 +40,7 @@ const createPost = asyncHandler(async (req, res) => {
     });
     res.status(200).json(post);
   } catch (error) {
-    res.status(400).json({ error: "Not created" });
+    res.status(400).json({ error: error.message });
   }
 });
 
@@ -52,9 +53,14 @@ const updatePost = asyncHandler(async (req, res) => {
     res.status(400).json({ error: "Post not found" });
   }
 
-  const updatingPost = await Blog.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-  });
+  const updatingPost = await Blog.findByIdAndUpdate(
+    req.params.id,
+    { ...req.body },
+    {
+      new: true,
+    }
+  );
+  res.status(200).json(updatingPost);
 });
 
 // @desc delete POSTs
@@ -80,7 +86,6 @@ const getTags = asyncHandler(async (req, res) => {
 
 module.exports = {
   getPost,
-
   getTags,
   getPosts,
   createPost,

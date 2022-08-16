@@ -21,7 +21,7 @@ const blogSchema = mongoose.Schema(
     },
     content: {
       type: String,
-      required: [true, "Add some content"],
+      required: [true, "Add some unique content"],
     },
     tags: {
       type: String,
