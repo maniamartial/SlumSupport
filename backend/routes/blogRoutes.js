@@ -17,10 +17,10 @@ router.get("/", getPosts);
 router.get("/:id", getPost);
 
 //create new post
-router.put("/", createPost);
+router.post("/", createPost);
 
 //updost);
-router.put("/:id", updatePost);
+router.patch("/:id", updatePost);
 
 //delete post
 router.delete("/:id", deletePost);

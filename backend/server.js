@@ -16,5 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/posts", require("./routes/blogRoutes"));
+app.use("/api/user", require("./routes/userRoutes"));
+
 app.use(errorHandler);
 app.listen(port, () => console.log(`Access the server on port ${port}`));
