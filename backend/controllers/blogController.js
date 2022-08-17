@@ -17,6 +17,7 @@ const getPosts = asyncHandler(async (req, res) => {
     res.send("No posts lol");
   } else {
     res.status(200).json(posts);
+    ss;
     res.send("Get All Posts");
   }
 });

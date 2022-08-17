@@ -11,6 +11,6 @@ const {
 //import functionalities and give them the APIs
 router.post("/", registerUser);
 router.post("/login", loginUser);
-router.get("myposts", getMyPost);
+router.get("/myposts", getMyPost);
 
 module.exports = router;
