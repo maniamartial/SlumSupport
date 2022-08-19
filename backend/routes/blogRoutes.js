@@ -9,21 +9,21 @@ const {
   getPost,
   getTags,
 } = require("../controllers/blogController.js");
-
+const { protect } = require("../middleware/authMiddleware");
 //getposts
-router.get("/", getPosts);
+router.get("/", protect, getPosts);
 
 //get single posts
-router.get("/:id", getPost);
+router.get("/:id", protect, getPost);
 
 //create new post
-router.post("/", createPost);
+router.post("/", protect, createPost);
 
 //updost);
-router.patch("/:id", updatePost);
+router.patch("/:id", protect, updatePost);
 
 //delete post
-router.delete("/:id", deletePost);
+router.delete("/:id", protect, deletePost);
 
 //exports
 module.exports = router;

@@ -107,7 +107,7 @@ const loginUser = asyncHandler(async (req, res, next) => {
 //@route GET  /api/users/getme
 //@access Public
 const getMyPost = asyncHandler(async (req, res) => {
-  const { _id, name, password } = await User.findById(req.user.id);
+  const { _id, username, email } = await User.findById(req.user.id);
   res.status(200).json({
     id: _id,
     username,
