@@ -41,3 +41,42 @@ code {
   font-size: 30px;
   font-family: Helvetica;
 }
+
+.container-row {
+  background-color: rgb(253, 251, 227);
+}
+.central-container {
+  background-color: rgb(252, 253, 252);
+  min-height: 500px;
+}
+.subtitle {
+  font-size: 25px;
+  color: rgb(219, 214, 146);
+  font-weight: lighter;
+}
+.container-post {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  background-color: rgb(253, 251, 227);
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  padding-left: 15%;
+}
+.post-card {
+  width: 80%;
+}
+@media (max-width: 500pc) {
+  .container-post {
+    padding: 0 0px;
+  }
+  .post-image {
+    height: 200px;
+  }
+  .post-card {
+    width: 100%;
+  }
+}

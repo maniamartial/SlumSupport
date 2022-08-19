@@ -7,10 +7,10 @@ const {
   loginUser,
   getMyPost,
 } = require("../controllers/userController");
-
+const { protect } = require("../middleware/authMiddleware");
 //import functionalities and give them the APIs
 router.post("/", registerUser);
 router.post("/login", loginUser);
-router.get("/myposts", getMyPost);
+router.get("/myposts", protect, getMyPost);
 
 module.exports = router;

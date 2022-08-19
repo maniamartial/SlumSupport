@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import Aboutus from "./pages/Aboutus";
+import Post from "./pages/Post";
 function App() {
   return (
     <div className="contain">
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/aboutus" element={<Aboutus />} />
+          <Route path="/post" element={<Post />} />
         </Routes>
         <Footer />
       </BrowserRouter>
