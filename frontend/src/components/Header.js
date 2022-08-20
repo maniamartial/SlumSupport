@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import logo2 from "./logo2-removebg-preview.png";
 import { Link } from "react-router-dom";
+import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
 
 function CollapsibleExample() {
   return (
@@ -15,7 +16,7 @@ function CollapsibleExample() {
       variant="dark"
     >
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img src={logo2} alt="Logo" width="80px" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -41,16 +42,19 @@ function CollapsibleExample() {
           </Nav>
           <Nav>
             <Nav.Link
-              href="#deets"
+              href="signin"
               className="text-body btn btn-outline-secondary  m-2"
             >
+              <FaSignInAlt />
               Sign In
             </Nav.Link>
             <Nav.Link
               eventKey={2}
-              href="#memes"
+              href="signup"
               className="text-body btn btn-outline-secondary m-2 p-6"
             >
+              {" "}
+              <FaUser />
               Sign Up
             </Nav.Link>
           </Nav>
