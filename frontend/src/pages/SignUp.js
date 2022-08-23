@@ -23,7 +23,12 @@ function SignUp() {
     }));
   };
 
+  /* const { user, isError, isLoading, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );*/
+
   const navigate = useNavigate();
+  //const dispatch = useDispatch();
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -51,8 +56,8 @@ function SignUp() {
               <input
                 type="text"
                 className="form-control"
-                id="name"
-                name="name"
+                id="username"
+                name="username"
                 value={username}
                 placeholder="Enter your name"
                 onChange={onChange}
