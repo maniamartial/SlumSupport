@@ -12,7 +12,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
   if (!username || !email || !password) {
     res.status(404);
-    throw new Error("Please fill all the fields");
+    throw new Error("Please fill all the fields to proceed");
   }
 
   const userExist = await User.findOne({ email });
